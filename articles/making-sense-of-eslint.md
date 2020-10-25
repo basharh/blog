@@ -56,19 +56,9 @@ set of all issues that a linter can indicate is not defined. Linting can flag
 issues that might cause bugs or runtime errors but can also include issues with
 code style or code formatting that have no effect on program behavior.
 
-## ESLint
-
-The flexible role of a linter is one of the reasons why eslint can be a little
-difficult to understand. So what is ESLint? ESLint is a linting tool that falls
-in the category of linters of other languages. What makes eslint special
-however is that its linting rules, ie the issues that it can test for, is
-dynamic and pluggable. ESLint provides the framework for rules to be written by
-anyone. And although it ships with some built-in rules, those rules are written
-the same way as any rules written by someone wanting to introduce a new rule.
-
 ### Challenges Poised by JavaScript
 
-#### Evovling Standards
+#### Evolving Standards
 
 ESLint is built primarily to target JavaScript. JavaScript is a tricky language
 to lint for a number of reasons. The first is that JavaScript itself is
@@ -107,3 +97,20 @@ codebase so that it can properly apply the linting rules for it.
 
 The support of commonjs in Nodejs was built-in to the runtime. In order
 for commonjs modules to be used in the browser, they needed to be transformed.
+
+## ESLint
+
+The flexible role of a linter is one of the reasons why eslint can be a little
+difficult to understand. So what is ESLint? ESLint is a linting tool that falls
+in the category of linters of other languages. What makes eslint special
+however is that its linting rules, ie the issues that it can test for, is
+dynamic and pluggable. ESLint provides the framework for rules to be written by
+anyone. And although it ships with some built-in rules, those rules are written
+the same way as any rules written by someone wanting to introduce a new rule.
+
+### The Success of ESLint
+
+Unlike other tools, ESLint allows developers to lint JavaScript code with all
+the disparities in the language considered. Its plugin architecture allows
+developers to choose those rules that apply to the particular syntax and
+environment in which they're running their JavaScript code.

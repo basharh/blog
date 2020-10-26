@@ -78,15 +78,32 @@ a transpiler of modern JavaScript into JavaScript that could run on target
 environments. There are a lot of moving parts to Babel and I am not 100% sure
 of what they do. Babel tran
 
+#### Babel Plugins
+
 My understanding is that Babel will parse new JavaScript code. It will then
 apply any transformations that are specified in the plugins configured.
 Transformations are responsible for translating the AST produced by Babel into
 target JavaScript code. The choice of plugins is determined by the target of
 the transformation. It is up to the developer to choose those transformations
 that will allow the latest JavaScript to work on their desired target
-environments.  One way to help with this is to use the `env` preset which is a
+environments. One way to help with this is to use the `env` preset which is a
 smart preset that will choose the plugins required based on a target
 environment specification.
+
+#### Target of Babel Plugins
+
+I have yet to determine which version of JavaScript do the plugins transform.
+Transformation plugins can theoretically apply any transformation to modern
+JavaScript but do they always compile down to ES5? Or is the choice of target
+customizable? There can be two options both of which might be supported. One is
+to have different plugins apply a transformation of some modern JavaScript
+feature into different targets. The other option would be to have a single
+Babel plugin for a particular modern JavaScript feature be customizable via its
+own options to target different environment.
+
+To summarize, this means it could be multiple plugins for one feature where
+each plugin targets one target versus a single plugin for one feature with
+multiple targets based on plugin options.
 
 #### User Extensions of JavaScript
 

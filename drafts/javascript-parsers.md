@@ -43,7 +43,9 @@ same.
 
 ## JavaScript Parsers
 
-
+The following is a quick tour of well-known JavaScript parsers. Where I've felt
+that context is needed, I've provided background on the particular tool that
+parser.
 
 ### Esprima
 
@@ -54,6 +56,8 @@ of Esprima led the ESLint team to build their own parser that uses Acorn.
 
 ### Acorn
 
+Unlike Babel parser, Acorn seems to be extensible to allow for arbitrary
+syntax definitions.
 
 ### Espree
 
@@ -64,9 +68,40 @@ Espree can still support the Esprima API while bringing in the flexibility of
 the Acorn parser.
 
 ### Espree vs Esprima
+
 https://github.com/eslint/espree#why-another-parser
 
 ### Babel Parser
+
+Babel parser is a JavaScript parser for the Babel transformation tool. Babel is
+a transpiler of modern JavaScript into JavaScript that could run on target
+environments. There are a lot of moving parts to Babel and I am not 100% sure
+of what they do. Babel tran
+
+My understanding is that Babel will parse new JavaScript code. It will then
+apply any transformations that are specified in the plugins configured.
+Transformations are responsible for translating the AST produced by Babel into
+target JavaScript code. The choice of plugins is determined by the target of
+the transformation. It is up to the developer to choose those transformations
+that will allow the latest JavaScript to work on their desired target
+environments.  One way to help with this is to use the `env` preset which is a
+smart preset that will choose the plugins required based on a target
+environment specification.
+
+#### User Extensions of JavaScript
+
+I used to believe that Babel allows for custom JavaScript syntax
+to be defined but this doesn't seem to be the case. Babel does seem to support
+some extensions to JavaScript outside ECMAScript. Some examples of these
+extensions are as flow, jsx, and typescript but this is done by babel
+defined plugins.  I am not sure if Babel allows for custom extensions outside
+the control of the Babel project but I don't think that's the case. In other
+words, the Babel project doesn't seem to allow the babel parser to be extended
+by arbitrary plugins.
+
+#### The Babel Handbook
+
+https://github.com/jamiebuilds/babel-handbook/blob/master/translations/en/README.md
 
 ### Esprima
 
